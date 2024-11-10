@@ -58,7 +58,15 @@ class App extends Component {
     })
   }
 
-  
+  handleDelete = (id) =>{
+    //crear un nuevo array que solo tendrá las tareas que no contengan el id de la tarea que queremos eliminar
+    const filteredItems = this.state.items.filter(i => i.id !== id);
+
+    //actualizar el estado con el nuevo array
+    this.setState({
+      items: filteredItems
+    })
+  }
   render () {
   return (
     <div className="container">
@@ -67,7 +75,7 @@ class App extends Component {
           <h3 className="text-capitalize text-center">To Do Input</h3>
           
         <TodoInput item={this.state.item} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
-        <TodoList  items={this.state.items} clearList={this.clearList}/>
+        <TodoList  items={this.state.items} clearList={this.clearList} handleDelete={this.handleDelete} />
         </div>
       </div>
     </div>
