@@ -33,7 +33,7 @@ class App extends Component {
     //representa la tarea  actual que el usuario ha escrito
     const newItem = {
       id: this.state.id, //llama al método uuid() que le asigna el id
-      item: this.state.item //contiene el texto
+      title: this.state.item //contiene el texto
     }
 
     console.log(newItem); //verificar que se crea
@@ -59,7 +59,7 @@ class App extends Component {
           <h3 className="text-capitalize text-center">To Do Input</h3>
           
         <TodoInput item={this.state.item} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
-        <TodoList />
+        <TodoList  items={this.state.items}/>
         </div>
       </div>
     </div>
