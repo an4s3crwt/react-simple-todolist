@@ -1,0 +1,85 @@
+/* App.css */
+
+/* Estilos generales del cuerpo */
+body {
+    background-color: #f7f7f7; /* Gris muy claro de fondo */
+    font-family: 'Arial', sans-serif; /* Tipografía minimalista */
+    color: #333; /* Texto oscuro */
+  }
+  
+  /* Asegura que todo el contenido de la aplicación esté alineado al centro */
+  .container {
+    padding-top: 50px;
+  }
+  
+  /* Personaliza la apariencia de las tarjetas de Bootstrap */
+  .card {
+    background-color: #ffffff; /* Fondo blanco para la tarjeta */
+    border-radius: 8px; /* Bordes suaves */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 2rem;
+  }
+  
+  /* Estilo del título en el encabezado */
+  h3 {
+    color: #333; /* Color negro suave para el título */
+    font-weight: 600; /* Fuente más gruesa para el título */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Personaliza los botones */
+  .btn-primary {
+    background-color: #333 !important; /* Gris oscuro para el botón */
+    border: none; /* Elimina el borde */
+    color: #fff; /* Texto blanco */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 5px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #555 !important; /* Gris más claro cuando se pasa el ratón */
+  }
+  
+  /* Personaliza la lista de tareas */
+  .list-group-item {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde gris suave */
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 1.1rem;
+    color: #333; /* Texto gris oscuro */
+  }
+  
+  .list-group-item:hover {
+    background-color: #f1f1f1; /* Fondo gris muy suave en hover */
+  }
+  
+  /* Íconos de tareas */
+  .todo-icon {
+    display: flex;
+    align-items: center;
+  }
+  
+  .todo-icon .mx-2 {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #777; /* Gris oscuro */
+  }
+  
+  .todo-icon .mx-2:hover {
+    color: #333; /* Cambia a negro cuando el mouse pasa sobre el ícono */
+  }
+  /* Personaliza el botón 'Clear List' */
+.btn-secondary {
+    background-color: #555 !important; /* Gris oscuro */
+    border: none;
+    color: #fff;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #333 !important; /* Gris aún más oscuro en hover */
+  }
+  

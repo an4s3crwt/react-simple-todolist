@@ -6,7 +6,7 @@ import TodoList from "./components/todolist";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {v4 as uuidv4} from 'uuid';
-
+import './App.css';
 class App extends Component {
   //gestionar las interacciones con la lista
   state={
