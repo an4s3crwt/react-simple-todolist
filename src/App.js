@@ -79,7 +79,7 @@ class App extends Component {
     this.setState({
       items: filteredItems,
       item:selectedItem.title,
-      editItem: true,
+      editItem: true, //según sea true o false el color y el texto del botón cambia
       id:id //así al darle al botón de crear item despues de haberlo  editado se crear el newItem pero en lugar de crearlo con un nuevo id(uuid), s esobreeescribe el id
     })
 
@@ -95,7 +95,13 @@ class App extends Component {
         <div className="col-10 mx-auto col-md-8 mt-4">
           <h3 className="text-capitalize text-center">To Do Input</h3>
           
-        <TodoInput item={this.state.item} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+        <TodoInput item={this.state.item} 
+        handleChange={this.handleChange} 
+        handleSubmit={this.handleSubmit}
+        editItem={this.state.editItem} 
+        />
+
+        
         <TodoList  items={this.state.items} 
         clearList={this.clearList} 
         handleDelete={this.handleDelete} 
