@@ -51,6 +51,14 @@ class App extends Component {
     })
 
   }
+
+  clearList = () =>{
+    this.setState({
+      items:[]
+    })
+  }
+
+  
   render () {
   return (
     <div className="container">
@@ -59,7 +67,7 @@ class App extends Component {
           <h3 className="text-capitalize text-center">To Do Input</h3>
           
         <TodoInput item={this.state.item} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
-        <TodoList  items={this.state.items}/>
+        <TodoList  items={this.state.items} clearList={this.clearList}/>
         </div>
       </div>
     </div>
