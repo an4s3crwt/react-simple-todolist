@@ -36,7 +36,7 @@ class App extends Component {
       title: this.state.item //contiene el texto
     }
 
-    console.log(newItem); //verificar que se crea
+
 
     //array nuevo que contiene las tareas anteriores(this.state.items) con el spread operador para separarlas y agregar la nueva(newItem)
     const updatedItems = [...this.state.items,newItem];
@@ -67,6 +67,27 @@ class App extends Component {
       items: filteredItems
     })
   }
+
+  handleEdit = (id) =>{
+    //crear el nuevo array eliminando el del id de la tarea que queremos editar
+    const filteredItems = this.state.items.filter(i => i.id !==id);
+
+    const selectedItem = this.state.items.find(i => i.id ===id);
+
+    console.log(selectedItem);
+    //actualizar el estado con el nuevo array
+    this.setState({
+      items: filteredItems,
+      item:selectedItem.title,
+      editItem: true,
+      id:id //así al darle al botón de crear item despues de haberlo  editado se crear el newItem pero en lugar de crearlo con un nuevo id(uuid), s esobreeescribe el id
+    })
+
+    
+
+
+  }
+
   render () {
   return (
     <div className="container">
@@ -75,7 +96,11 @@ class App extends Component {
           <h3 className="text-capitalize text-center">To Do Input</h3>
           
         <TodoInput item={this.state.item} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
-        <TodoList  items={this.state.items} clearList={this.clearList} handleDelete={this.handleDelete} />
+        <TodoList  items={this.state.items} 
+        clearList={this.clearList} 
+        handleDelete={this.handleDelete} 
+        handleEdit={this.handleEdit}
+        />
         </div>
       </div>
     </div>
