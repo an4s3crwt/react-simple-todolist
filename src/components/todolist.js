@@ -5,7 +5,7 @@ export default class TodoList extends Component {
   render() {
     const { items, clearList, handleDelete , handleEdit} = this.props;
     return (
-      <ul className="list-group">
+      <ul className="list-group retro-list">
         {items.map(item => (
           <TodoItem 
           key={item.id} 
@@ -14,7 +14,7 @@ export default class TodoList extends Component {
           handleEdit={() => handleEdit(item.id)}
            />
         ))}
-        <button type="button" className="btn btn-secondary w-100 mt-3"
+        <button type="button" className="btn retro-btn-clear w-100 mt-3"
         onClick={clearList}>
           Clear List
         </button>

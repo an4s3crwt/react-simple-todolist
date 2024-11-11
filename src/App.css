@@ -1,85 +1,131 @@
-/* App.css */
+/* General container styles */
+.retro-container {
+  background-color: rgba(255, 235, 245, 0.8);
+  border: 2px solid #ffb3c0;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 800px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #4f4f4f;
+}
 
-/* Estilos generales del cuerpo */
+/* Header styling */
+.retro-header {
+  font-size: 2.5em;
+  color: #ff9cc1;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Card style for TodoInput */
+.retro-card {
+  background-color: #fff0f6;
+  border: 1px solid #ffb3c0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Input styling for TodoInput */
+.retro-input {
+  border: 1px solid #ffb3c0;
+  border-radius: 5px;
+  color: #4f4f4f;
+  background-color: #ffe6f1;
+  padding: 10px;
+  font-size: 1.1em;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.retro-input::placeholder {
+  color: #ff9cc1;
+  font-style: italic;
+}
+
+/* Button styling */
+.retro-btn-add, .retro-btn-edit, .retro-btn-clear {
+  background-color: #ffb3c0;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+}
+
+.retro-btn-add:hover, .retro-btn-edit:hover, .retro-btn-clear:hover {
+  background-color: #ff9cc1;
+  transform: scale(1.05);
+}
+
+.retro-btn-edit {
+  background-color: #ffa6bc;
+}
+
+/* List and items in TodoList */
+.retro-list {
+  background-color: #fff0f6;
+  border: 1px solid #ffb3c0;
+  border-radius: 10px;
+  padding: 15px;
+  list-style-type: none;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.retro-list-item {
+  background-color: #ffe6f1;
+  border: 1px solid #ffb3c0;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #4f4f4f;
+  font-size: 1.1em;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon styling for edit and delete */
+.retro-icon {
+  color: #ff9cc1;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.retro-icon:hover {
+  color: #ff7dae;
+}
+
+/* Clear button style */
+.retro-btn-clear {
+  margin-top: 15px;
+  background-color: #ff7dae;
+}
+
+/* Adding pastel pink background and overlay effect */
 body {
-    background-color: #f7f7f7; /* Gris muy claro de fondo */
-    font-family: 'Arial', sans-serif; /* Tipografía minimalista */
-    color: #333; /* Texto oscuro */
-  }
-  
-  /* Asegura que todo el contenido de la aplicación esté alineado al centro */
-  .container {
-    padding-top: 50px;
-  }
-  
-  /* Personaliza la apariencia de las tarjetas de Bootstrap */
-  .card {
-    background-color: #ffffff; /* Fondo blanco para la tarjeta */
-    border-radius: 8px; /* Bordes suaves */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    padding: 2rem;
-  }
-  
-  /* Estilo del título en el encabezado */
-  h3 {
-    color: #333; /* Color negro suave para el título */
-    font-weight: 600; /* Fuente más gruesa para el título */
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Personaliza los botones */
-  .btn-primary {
-    background-color: #333 !important; /* Gris oscuro para el botón */
-    border: none; /* Elimina el borde */
-    color: #fff; /* Texto blanco */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    font-weight: 500;
-    padding: 12px;
-    border-radius: 5px;
-  }
-  
-  .btn-primary:hover {
-    background-color: #555 !important; /* Gris más claro cuando se pasa el ratón */
-  }
-  
-  /* Personaliza la lista de tareas */
-  .list-group-item {
-    background-color: #ffffff; /* Fondo blanco */
-    border: 1px solid #ddd; /* Borde gris suave */
-    margin-bottom: 10px;
-    padding: 15px;
-    font-size: 1.1rem;
-    color: #333; /* Texto gris oscuro */
-  }
-  
-  .list-group-item:hover {
-    background-color: #f1f1f1; /* Fondo gris muy suave en hover */
-  }
-  
-  /* Íconos de tareas */
-  .todo-icon {
-    display: flex;
-    align-items: center;
-  }
-  
-  .todo-icon .mx-2 {
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: #777; /* Gris oscuro */
-  }
-  
-  .todo-icon .mx-2:hover {
-    color: #333; /* Cambia a negro cuando el mouse pasa sobre el ícono */
-  }
-  /* Personaliza el botón 'Clear List' */
-.btn-secondary {
-    background-color: #555 !important; /* Gris oscuro */
-    border: none;
-    color: #fff;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #333 !important; /* Gris aún más oscuro en hover */
-  }
-  
+  background-color: #ffe6f1;
+  background: url('https://i.pinimg.com/564x/d3/87/38/d38738baf9d7ded484afe11d9ff871b8.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #4f4f4f;
+}
+
+/* Decorative animation (optional) */
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(0, 10px); }
+}
+
+.decorative-img {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  animation: float 5s ease-in-out infinite;
+  opacity: 0.8;
+}
